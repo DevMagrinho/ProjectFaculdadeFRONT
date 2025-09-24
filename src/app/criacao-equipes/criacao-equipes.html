@@ -1,1 +1,45 @@
-<p>criacao-equipes works!</p>
+<div class="equipe-container">
+  <header>
+    <h1>Cadastro de Equipes</h1>
+  </header>
+
+  <form #projectForm="ngForm" (ngSubmit)="salvar()">
+    <div class="form-field">
+      <label for="nomeEquipe">Nome da Equipe</label>
+      <input
+        type="text"
+        id="nomeEquipe"
+        name="nomeEquipe"
+        [(ngModel)]="equipe.nome"
+        required
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="descricao">Descrição</label>
+      <textarea
+        id="descricao"
+        name="descricao"
+        [(ngModel)]="equipe.descricao"
+        rows="4"
+        required
+      ></textarea>
+    </div>
+
+    <div class="form-field">
+      <label for="membros">Membros</label>
+      <select id="membros" name="membros" [(ngModel)]="equipe.membros" required>
+        <option value="" disabled selected>Selecione os membros</option>
+        @for (membro of equipe.membros; track membro.id) {
+        <option [value]="membro.id">{{ membro.nome }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="button-container">
+      <button type="submit" [disabled]="!projectForm.form.valid">
+        Enviar equipe
+      </button>
+    </div>
+  </form>
+</div>
