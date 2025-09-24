@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "vendas-marcos-app": {
+    "projectfacul": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -58,10 +58,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "vendas-marcos-app:build:production"
+              "buildTarget": "projectfacul:build:production"
             },
             "development": {
-              "buildTarget": "vendas-marcos-app:build:development"
+              "buildTarget": "projectfacul:build:development"
             }
           },
           "defaultConfiguration": "development"
