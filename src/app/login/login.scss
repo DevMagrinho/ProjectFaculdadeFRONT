@@ -210,3 +210,10 @@ body {
 .container.active .toggle-right {
   transform: translateX(200%);
 }
+
+.mensagem-erro {
+  color: #ff0000;
+  margin-top: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
