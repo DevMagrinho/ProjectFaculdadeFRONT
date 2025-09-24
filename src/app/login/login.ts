@@ -38,7 +38,7 @@ export class Login implements AfterViewInit, OnInit {
     console.log('Senha:', this.senha);
 
     // Exemplo: Redirecionar se o login for válido
-    if (this.email !== 'admin@gmail.com' && this.senha !== 'admin') {
+    if (this.email == 'admin@gmail.com' && this.senha == 'admin') {
       this.router.navigate(['/home']);
     } else {
       this.mensagemErro = 'Email ou senha incorretos!';

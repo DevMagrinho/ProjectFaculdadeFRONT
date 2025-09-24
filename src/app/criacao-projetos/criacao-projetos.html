@@ -1,1 +1,88 @@
-<p>criacao-projetos works!</p>
+<div class="projeto-container">
+  <header>
+    <h1>Cadastro de Projeto</h1>
+  </header>
+
+  <form #projectForm="ngForm" (ngSubmit)="salvar()">
+      <div class="form-field">
+        <label for="nomeProjeto">Nome do Projeto</label>
+        <input
+          type="text"
+          id="nomeProjeto"
+          name="nomeProjeto"
+          [(ngModel)]="projeto.nome"
+          required
+        />
+      </div>
+
+      <div class="form-field">
+        <label for="descricao">Descrição</label>
+        <textarea
+          id="descricao"
+          name="descricao"
+          [(ngModel)]="projeto.descricao"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="dataInicio">Data de Início</label>
+          <input
+            type="date"
+            id="dataInicio"
+            name="dataInicio"
+            [(ngModel)]="projeto.dataInicio"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="dataTermino">Data de Término Prevista</label>
+          <input
+            type="date"
+            id="dataTermino"
+            name="dataTermino"
+            [(ngModel)]="projeto.dataTermino"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="status">Status</label>
+          <select
+            id="status"
+            name="status"
+            [(ngModel)]="projeto.status"
+            required
+          >
+            <option value="" disabled selected>Selecione o status</option>
+            <option value="planejado">Planejado</option>
+            <option value="em_andamento">Em Andamento</option>
+            <option value="cancelado">Cancelado</option>
+            <option value="concluido">Concluído</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="gerente">Gerente Responsável</label>
+          <input
+            type="text"
+            id="gerente"
+            name="gerente"
+            [(ngModel)]="projeto.gerente"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button type="submit" [disabled]="!projectForm.form.valid">
+          Enviar Projeto
+        </button>
+    </div>
+  </form>
+</div>
